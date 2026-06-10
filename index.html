@@ -400,6 +400,181 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        /* Certificates Dynamic Layout Grid */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .cert-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-icon {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-top: 0.2rem;
+        }
+
+        .cert-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-color);
+        }
+
+        .cert-issuer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .cert-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .view-action {
+            color: var(--accent-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Live Preview Document Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-container {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 90%;
+            max-width: 900px;
+            height: 85vh;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.2rem 1.5rem;
+            background: rgba(15, 23, 42, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .close-modal-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-modal-btn:hover {
+            color: #ef4444;
+        }
+
+        .modal-body {
+            flex: 1;
+            background: #0f172a;
+            position: relative;
+        }
+
+        .modal-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .modal-fallback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            background: var(--bg-color);
+            color: var(--text-muted);
+        }
+
+        .modal-fallback i {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
         /* Contact Section */
         .contact-container {
             text-align: center;
@@ -460,6 +635,7 @@
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -538,6 +714,127 @@
         </div>
     </section>
 
+    <section id="certificates">
+        <h2 class="section-title">Verified Credentials</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem;">Click on any credential card below to directly open a high-resolution interactive digital review window.</p>
+        
+        <div class="certs-grid">
+            
+            <div class="cert-card" onclick="launchDocumentModal('Data Analysis and Visualization Intensive', 'Londeka Ngwenya-1143 (2).pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div>
+                        <div class="cert-title">Data Analysis and Visualization Training Program</div>
+                        <div class="cert-issuer">Chongqing Dianjiang Vocational Education Center & Wise Insight</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>April 2026</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="launchDocumentModal('Microsoft Search Technology', 'Certificate Search Technology .pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-search"></i></div>
+                    <div>
+                        <div class="cert-title">Search Technology Certification</div>
+                        <div class="cert-issuer">Microsoft x Durban University of Technology (DUT)</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>July 2025</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="launchDocumentModal('AI and Accessibility', 'Certificate-AI and Accessibility .pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-universal-access"></i></div>
+                    <div>
+                        <div class="cert-title">AI and Accessibility Alignment</div>
+                        <div class="cert-issuer">Microsoft x Durban University of Technology (DUT)</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>July 2025</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="launchDocumentModal('Artificial Intelligence Fundamentals', 'Certificate-AI Fundamentals .pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                    <div>
+                        <div class="cert-title">AI Fundamentals Infrastructure</div>
+                        <div class="cert-issuer">Microsoft x Durban University of Technology (DUT)</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>July 2025</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="launchDocumentModal('Generative AI Systems', 'Certificate-Generative AI.pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <div>
+                        <div class="cert-title">Generative AI Engineering</div>
+                        <div class="cert-issuer">Microsoft x Durban University of Technology (DUT)</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>July 2025</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="launchDocumentModal('Microsoft Copilot Deployment', 'Certificate-Microsoft Copilot.pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div>
+                        <div class="cert-title">Microsoft Copilot Implementation</div>
+                        <div class="cert-issuer">Microsoft x Durban University of Technology (DUT)</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>July 2025</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="launchDocumentModal('Responsible AI Practices', 'Certificate-Responsible AI.pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <div>
+                        <div class="cert-title">Responsible AI Governance</div>
+                        <div class="cert-issuer">Microsoft x Durban University of Technology (DUT)</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>July 2025</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="cert-card" onclick="launchDocumentModal('Basic Education Reading Champion Initiative', 'Reading Champions Certificate - Londeka Ngwenya.pdf')">
+                <div class="cert-header">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div>
+                        <div class="cert-title">Presidential Employment Stimulus - Reading Champion</div>
+                        <div class="cert-issuer">Department of Basic Education | Republic of South Africa</div>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <span>November 2025</span>
+                    <span class="view-action">Preview <i class="fas fa-expand-arrows-alt"></i></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="projects">
         <h2 class="section-title">Live Production Apps</h2>
         <div class="projects-grid" id="projects-container">
@@ -580,11 +877,86 @@
         </div>
     </section>
 
+    <div id="document-preview-modal" class="modal-overlay" onclick="dismissDocumentModal(event)">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modal-document-title">Credential Verification Window</h3>
+                <button class="close-modal-btn" onclick="closeDocumentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="modal-iframe-viewer" class="modal-iframe" src=""></iframe>
+                
+                <div id="modal-fallback-ui" class="modal-fallback" style="display: none;">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff;">Digital Certificate Preview</h4>
+                    <p style="margin-bottom: 1.5rem; max-width: 500px;">Your browser is configured to download files directly, or your documents are stored relative to this production environment build directory path.</p>
+                    <a id="modal-fallback-download-link" href="#" target="_blank" class="cta-btn" style="font-size: 0.9rem; padding: 0.6rem 1.5rem;">
+                        Open Document Externally <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Londeka Blessing Ngwenya. Built Dynamically.</p>
     </footer>
 
     <script>
+        // Interactive Credentials Modal Engine 
+        function launchDocumentModal(friendlyName, relativeFilePath) {
+            const overlay = document.getElementById('document-preview-modal');
+            const titleEl = document.getElementById('modal-document-title');
+            const iframe = document.getElementById('modal-iframe-viewer');
+            const fallbackUI = document.getElementById('modal-fallback-ui');
+            const fallbackLink = document.getElementById('modal-fallback-download-link');
+
+            titleEl.textContent = friendlyName;
+            
+            // Set data paths safely
+            iframe.src = relativeFilePath;
+            fallbackLink.href = relativeFilePath;
+
+            // Trigger visual overlay animations
+            overlay.classList.add('active');
+
+            // Handle selective mobile/browser safety overrides gracefully
+            iframe.onerror = function() {
+                iframe.style.display = 'none';
+                fallbackUI.style.display = 'flex';
+            };
+
+            // Set up a proactive timeout handler for specialized browsers that block iframe loads silently
+            setTimeout(() => {
+                try {
+                    if (!iframe.contentWindow || iframe.contentWindow.location.href === "about:blank") {
+                        // Keep iframe running but unhide fallback buttons for safe cross-platform access
+                        fallbackUI.style.display = 'flex';
+                    }
+                } catch (e) {
+                    // Browser security policy origin blocking active - show download link helper explicitly
+                    fallbackUI.style.display = 'flex';
+                }
+            }, 800);
+        }
+
+        function closeDocumentModal() {
+            const overlay = document.getElementById('document-preview-modal');
+            const iframe = document.getElementById('modal-iframe-viewer');
+            const fallbackUI = document.getElementById('modal-fallback-ui');
+            
+            overlay.classList.remove('active');
+            iframe.src = "";
+            fallbackUI.style.display = 'none';
+        }
+
+        function dismissDocumentModal(e) {
+            // Only dismiss if user clicks empty backdrop blurred areas
+            if (e.target.id === 'document-preview-modal') {
+                closeDocumentModal();
+            }
+        }
+
         // Tab switching system logic
         function switchAboutTab(event, tabId) {
             const allPanes = document.querySelectorAll('.tab-text-content');
