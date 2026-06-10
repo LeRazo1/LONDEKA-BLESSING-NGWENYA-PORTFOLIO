@@ -134,7 +134,7 @@
             overflow: hidden;
             border: 5px solid var(--accent-color);
             box-shadow: 0 10px 20px var(--shadow-color);
-            background: var(--card-bg); /* Fallback while loading */
+            background: var(--card-bg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -199,25 +199,102 @@
             background: var(--accent-color);
         }
 
-        /* About Section */
+        /* Interactive About Section Layout */
         .about-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 3fr;
+            gap: 2.5rem;
+            margin-top: 1rem;
         }
 
-        .about-text p {
+        .about-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.2rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .tab-btn i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background: rgba(56, 189, 248, 0.05);
+            color: var(--text-color);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateX(4px);
+        }
+
+        .tab-btn.active {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.05);
+            transform: translateX(6px);
+        }
+
+        .tab-btn.active i {
+            transform: scale(1.1);
+        }
+
+        .about-display-pane {
+            background: rgba(30, 41, 59, 0.4);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tab-text-content {
+            display: none;
+            animation: fadeInTab 0.5s ease forwards;
+        }
+
+        .tab-text-content.active-pane {
+            display: block;
+        }
+
+        .tab-text-content p {
             color: var(--text-muted);
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-size: 1.1rem;
+        }
+
+        .tab-text-content strong {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .skill-tag {
@@ -226,9 +303,16 @@
             border-radius: 5px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
-        /* Projects Section (Dynamic) */
+        .skill-tag:hover {
+            border-color: var(--accent-color);
+            color: var(--text-color);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -358,7 +442,9 @@
             .hero-layout { flex-direction: column; text-align: center; }
             .hero-image-container { width: 180px; height: 180px; order: -1; margin-bottom: 2rem; }
             h1 { font-size: 2.8rem; }
-            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .about-content { grid-template-columns: 1fr; gap: 1.5rem; }
+            .about-tabs { flex-direction: row; flex-wrap: wrap; }
+            .tab-btn { flex: 1; min-width: 140px; justify-content: center; padding: 0.8rem; }
             .nav-content { gap: 1rem; flex-direction: column; }
             .nav-socials { font-size: 1rem; margin-top: 0.5rem; }
             .section-title { text-align: center; }
@@ -404,17 +490,50 @@
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <div class="about-text">
-                <p>I am an ICT Graduate driven by a passion for structuring data flow, optimizing complex systems, and solving structural problems with logical precision.</p>
-                <p>Built SafeReg AI to secure digital registration. Instead of just focusing on isolated tools, I look at the big picture—how components integrate to create seamless, intelligent, and scalable architectures.</p>
-                <h3>Core Competencies</h3>
-                <div class="skills-grid">
-                    <div class="skill-tag">Systems Integration</div>
-                    <div class="skill-tag">AI Implementation</div>
-                    <div class="skill-tag">Process Automation</div>
-                    <div class="skill-tag">Data Flow Architecture</div>
-                    <div class="skill-tag">Logical Problem Solving</div>
+            
+            <div class="about-tabs">
+                <button class="tab-btn active" onclick="switchAboutTab(event, 'vision-tab')">
+                    <i class="fas fa-user-graduate"></i> Profile Vision
+                </button>
+                <button class="tab-btn" onclick="switchAboutTab(event, 'experience-tab')">
+                    <i class="fas fa-briefcase"></i> Experience
+                </button>
+                <button class="tab-btn" onclick="switchAboutTab(event, 'safereg-tab')">
+                    <i class="fas fa-shield-alt"></i> SafeReg Blueprint
+                </button>
+            </div>
+
+            <div class="about-display-pane">
+                <div class="pane-text-wrapper">
+                    
+                    <div id="vision-tab" class="tab-text-content active-pane">
+                        <p>I am an <strong>Information and Communication Technology graduate</strong> with a deep architectural focus on networking, cybersecurity, systems support, and intelligent automation systems.</p>
+                        <p>I thrive on understanding the big picture—analyzing how complex technological elements integrate into unified, scalable, and highly protected pipelines instead of managing isolated infrastructure tools.</p>
+                    </div>
+
+                    <div id="experience-tab" class="tab-text-content">
+                        <p>Currently gaining active enterprise industry exposure within <strong>Systems Support at Mr Price Group</strong>, focusing on robust ecosystem analysis, infrastructure operations, and corporate operational stability.</p>
+                        <p>My foundational engineering competencies span network management, administrative protocols, and technical solutions framework engineering, complemented by key credentials via the <strong>Cisco Networking Academy</strong>.</p>
+                    </div>
+
+                    <div id="safereg-tab" class="tab-text-content">
+                        <p>Architected and launched <strong>SafeReg AI</strong>, an analytical machine learning registration fraud intelligence system engineered to systematically safeguard users and digital systems from cross-channel phishing attacks, domain impersonations, and credential structural vulnerabilities.</p>
+                        <p>This deployment embodies my professional objective: synthesizing intelligent computing concepts with enterprise network design rules to provide bulletproof data flow architectures.</p>
+                    </div>
+
                 </div>
+
+                <div>
+                    <h3 style="font-size: 1.1rem; margin-top: 1rem; margin-bottom: 0.6rem; color: var(--text-color);">Core Competencies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Systems Integration</div>
+                        <div class="skill-tag">AI Implementation</div>
+                        <div class="skill-tag">Process Automation</div>
+                        <div class="skill-tag">Data Flow Architecture</div>
+                        <div class="skill-tag">Logical Problem Solving</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -441,7 +560,7 @@
                 </div>
             </div>
 
-            </div>
+        </div>
     </section>
 
     <section id="contact">
@@ -466,7 +585,23 @@
     </footer>
 
     <script>
-        // Typing animation logic
+        // Tab switching system logic
+        function switchAboutTab(event, tabId) {
+            const allPanes = document.querySelectorAll('.tab-text-content');
+            allPanes.forEach(pane => {
+                pane.classList.remove('active-pane');
+            });
+
+            const allButtons = document.querySelectorAll('.tab-btn');
+            allButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active-pane');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Typing UI text list
         const words = ["Built SafeReg AI.", "Process-Driven Problem Solver.", "Architecting Solutions."];
         let i = 0;
         let timer;
@@ -506,7 +641,7 @@
         }
         typingEffect();
 
-        // Automated deployment scanner (predicts live URL)
+        // Automated deployment repository fetch systems scanner
         async function loadAdditionalRepos() {
             try {
                 const response = await fetch('https://api.github.com/users/LeRazo1/repos?sort=updated');
@@ -514,10 +649,8 @@
                     const repos = await response.json();
                     const container = document.getElementById('projects-container');
                     repos.forEach(repo => {
-                        // Avoid duplicates
                         if (repo.name.toUpperCase().includes('PORTFOLIO') || repo.name.toUpperCase().includes('SAFEREG')) return;
                         
-                        // Predict deployment URL on Vercel if website field is blank
                         const liveUrl = repo.homepage ? repo.homepage : `https://${repo.name.toLowerCase()}.vercel.app`;
                         
                         const card = document.createElement('div');
