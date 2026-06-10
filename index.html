@@ -134,6 +134,10 @@
             overflow: hidden;
             border: 5px solid var(--accent-color);
             box-shadow: 0 10px 20px var(--shadow-color);
+            background: var(--card-bg); /* Fallback while loading */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-image-container img {
@@ -384,7 +388,7 @@
     <section id="hero">
         <div class="hero-layout">
             <div class="hero-image-container">
-                <img src="image_0.png" alt="Londeka Blessing Ngwenya">
+                <img src="my-photo.jpg" alt="Londeka Blessing Ngwenya" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\' style=\'font-size: 5rem; color: var(--text-muted);\'></i>';">
             </div>
             <div class="hero-text-container">
                 <div class="hero-badge">ICT Graduate</div>
@@ -431,7 +435,7 @@
                         <span class="skill-tag" style="font-size: 0.8rem;">Automation</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://safereg-ai.vercel.app" target="_blank" class="project-btn btn-primary"><i class="fas fa-external-link-alt"></i> Open Live Application</a>
+                        <a href="https://reg-guard-genius.vercel.app/" target="_blank" class="project-btn btn-primary"><i class="fas fa-external-link-alt"></i> Open Live Application</a>
                         <a href="https://github.com/LeRazo1" target="_blank" class="project-btn btn-secondary"><i class="fab fa-github"></i> View Source Code</a>
                     </div>
                 </div>
@@ -531,7 +535,7 @@
                                 <div class="project-links">
                                     <a href="${liveUrl}" target="_blank" class="project-btn btn-primary"><i class="fas fa-external-link-alt"></i> Open Live Application</a>
                                     <a href="${repo.html_url}" target="_blank" class="project-btn btn-secondary"><i class="fab fa-github"></i> View Source Code</a>
-                                }
+                                </div>
                             </div>
                         `;
                         container.appendChild(card);
