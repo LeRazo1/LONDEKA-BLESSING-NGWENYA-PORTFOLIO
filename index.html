@@ -290,4 +290,350 @@
         }
 
         .skill-card h3 {
-            margin-
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- CERTIFICATIONS --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cert-meta {
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-badge {
+            font-size: 0.75rem;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            color: #22d3ee;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .cert-issuer {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: auto;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1rem;
+        }
+
+        /* --- CONTACT (LET'S CONNECT) --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-method-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-accent);
+            font-size: 1.25rem;
+        }
+
+        .contact-details h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-details p {
+            font-size: 1.1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .contact-form {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.8rem;
+            color: #fff;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+        }
+
+        .submit-btn {
+            background: #fff;
+            color: var(--bg-color);
+            border: none;
+            padding: 0.9rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 4rem;
+        }
+
+        /* --- RESPONSIVE STYLES --- */
+        @media (max-width: 768px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none; /* Can be paired with a mobile menu link */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Londeka Ngwenya</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-badge">ICT Professional Portfolio</div>
+        <h1>Londeka Ngwenya</h1>
+        <p>ICT Graduate specializing in process optimization, data visualization, and enterprise-scale business logic integration.</p>
+        <a href="#contact" class="cta-btn">Let's Connect</a>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>As an Information and Communication Technology graduate from the Durban University of Technology (DUT), I am deeply passionate about understanding the grand architecture of systems and enterprise integration.</p>
+                <p>Rather than looking at isolated coding tools or separate applications, I specialize in analyzing end-to-end data pipelines and evaluating how strategic core business modules interact fluidly to keep operations scaling efficiently.</p>
+            </div>
+            <div class="glass-card highlight-box">
+                <h3>Core Focus Areas</h3>
+                <ul class="highlight-list">
+                    <li><i class="fa-solid fa-circle-check"></i> System & Business Flow Integration</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Structured Process Frameworks</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Advanced Analytical Decision Logic</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Enterprise Resource Planning Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Professional Capabilities</h2>
+        <div class="skills-grid">
+            <div class="glass-card skill-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Process & Architecture Thinking</h3>
+                <p>Exceptional problem-solving approach centered on logical workflow processes rather than narrow tools. Designing systemic data dependencies accurately.</p>
+            </div>
+            <div class="glass-card skill-card">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h3>Data Analysis & Visualization</h3>
+                <p>Transforming multi-source unstructured numbers into clean, narrative dashboards that clarify trends and accelerate operational choices.</p>
+            </div>
+            <div class="glass-card skill-card">
+                <i class="fa-solid fa-robot"></i>
+                <h3>Enterprise AI Strategy</h3>
+                <p>Equipped with micro-credentials across safe runtime parameters, assistive productivity tools, and modern prompt engineering governance models.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title">Certifications & Training</h2>
+        <div class="cert-grid">
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Intensive Program</span>
+                    <h3>Data Analysis and Visualization</h3>
+                    <p class="cert-issuer">Chongqing Dianjiang Vocational Education Center & Wise Insight</p>
+                </div>
+                <div class="cert-date">April 2026</div>
+            </div>
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Microsoft AI Series</span>
+                    <h3>Generative AI & Fundamentals</h3>
+                    <p class="cert-issuer">Durban University of Technology (DUT)</p>
+                </div>
+                <div class="cert-date">July 2025</div>
+            </div>
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Microsoft AI Series</span>
+                    <h3>Responsible AI & Copilot Ecosystems</h3>
+                    <p class="cert-issuer">Durban University of Technology (DUT)</p>
+                </div>
+                <div class="cert-date">July 2025</div>
+            </div>
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Social Initiative</span>
+                    <h3>Reading Champion - Phase 5</h3>
+                    <p class="cert-issuer">Department of Basic Education (Presidential Employment Stimulus)</p>
+                </div>
+                <div class="cert-date">November 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>I am looking to collaborate on major business transformation pipelines, ecosystem analytics consulting, or system analyst operations. Reach out to coordinate an interview or professional discussion.</p>
+                
+                <div class="contact-method-list">
+                    <div class="glass-card contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>079 446 7144</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>your.email@example.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="glass-card contact-form" onsubmit="event.preventDefault(); alert('Message simulation sent successfully.');">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required placeholder="Let's build a path ahead..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Londeka Ngwenya. All Rights Reserved. Built securely using modular front-end code.
+    </footer>
+
+</body>
+</html>
