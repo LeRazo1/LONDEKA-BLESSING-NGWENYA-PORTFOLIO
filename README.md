@@ -7,7 +7,11 @@ This foundation provides the exact logical framework required to map multi-table
 
 Verified Core ModulesFocus & Architecture CompetencyIntroduction to Transact-SQLLogical query processing phase execution and basic relational theory.
 
-Sort and Filter Results in T-SQLOptimizing data retrieval and isolating granular data subsets.Combine Multiple Tables with JOINsNormalization mechanics, primary/foreign key relationships, and multi-dataset merging.Built-in Functions & GROUP BYAggregation logic, data transformation pipelines, and matrix reporting.Write Subqueries in T-SQLConstructing nested evaluation logic, self-contained expressions, and correlated execution.Modify Data with T-SQLManaging database state changes safely through INSERT, UPDATE, and DELETE operations.
+Sort and Filter Results in T-SQLOptimizing data retrieval and isolating granular data subsets.
+
+Combine Multiple Tables with JOINsNormalization mechanics, primary/foreign key relationships, and multi-dataset merging.Built-in Functions & GROUP BYAggregation logic, data transformation pipelines, and matrix reporting.Write Subqueries in T-SQLConstructing nested evaluation logic, self-contained expressions, and correlated execution.
+
+Modify Data with T-SQLManaging database state changes safely through INSERT, UPDATE, and DELETE operations.
 
 
 Process Application: Understanding how data isolates, joins, and mutates at the database level is directly transferable to analyzing enterprise system dependencies and debugging integration pipelines.
