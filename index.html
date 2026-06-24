@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Londeka Blessing Ngwenya | Network & Cloud Engineer Portfolio</title>
+    <title>Londeka Blessing Ngwenya | Portfolio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
@@ -30,6 +30,7 @@
             position: relative;
         }
 
+        /* Animated Particles Canvas Background */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -40,6 +41,7 @@
             pointer-events: none;
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -100,6 +102,7 @@
             transform: translateY(-2px);
         }
 
+        /* Dynamic Scroll Section Reveals */
         .reveal-section {
             opacity: 0;
             transform: translateY(40px) scale(0.98);
@@ -119,6 +122,7 @@
             justify-content: center;
         }
 
+        /* Hero Section */
         #hero {
             align-items: flex-start;
             position: relative;
@@ -201,12 +205,7 @@
             box-shadow: 0 10px 20px var(--shadow-color);
         }
 
-        .cta-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
+        /* Section Titles */
         .section-title {
             font-size: 2rem;
             margin-bottom: 2rem;
@@ -223,6 +222,7 @@
             background: var(--accent-color);
         }
 
+        /* About Layout */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 3fr;
@@ -324,6 +324,7 @@
             color: var(--text-color);
         }
 
+        /* Education Track Styling */
         .edu-track {
             display: flex;
             flex-direction: column;
@@ -380,6 +381,7 @@
             margin-top: 0.1rem;
         }
 
+        /* Certificates Grid */
         .certs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -449,6 +451,7 @@
             gap: 0.3rem;
         }
 
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -532,9 +535,9 @@
         .btn-secondary:hover {
             color: var(--text-color);
             background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-color);
         }
 
+        /* Modal Preview Structure */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -626,6 +629,7 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Contact & Footer */
         .contact-container {
             text-align: center;
             max-width: 700px;
@@ -696,7 +700,6 @@
             .about-tabs { flex-direction: row; flex-wrap: wrap; }
             .tab-btn { flex: 1; min-width: 140px; justify-content: center; }
             .nav-content { display: none; }
-            .cta-group { justify-content: center; }
         }
     </style>
 </head>
@@ -712,12 +715,12 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#projects">Deployments</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-socials">
                 <a href="https://github.com/LeRazo1" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/londeka-ngwenya-393a1b2a8/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/le__razo" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://youtube.com/@dopamine711" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
@@ -726,18 +729,15 @@
     <section id="hero" class="reveal-section">
         <div class="hero-layout">
             <div class="hero-image-container">
-                <img src="my-photo.jpg" alt="Londeka Blessing Ngwenya" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-network-wired\' style=\'font-size: 5rem; color: var(--accent-color);\'></i>';">
+                <img src="my-photo.jpg" alt="Londeka Blessing Ngwenya" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\' style=\'font-size: 5rem; color: var(--text-muted);\'></i>';">
             </div>
             <div class="hero-text-container">
-                <div class="hero-badge">Network & Cloud Infrastructure Engineer</div>
+                <div class="hero-badge">Network Systems Engineer</div>
                 <h1>Hi, I'm <span class="gradient-text">Londeka Blessing Ngwenya</span></h1>
                 <div class="typing-container">
                     <span id="typing-text"></span>
                 </div>
-                <div class="cta-group">
-                    <a href="#projects" class="cta-btn">Explore Deployments <i class="fas fa-arrow-down"></i></a>
-                    <a href="LONDEKA BLESSING NGWENYA (IT ADMIN)_2.pdf" target="_blank" class="project-btn btn-secondary" style="padding: 0 1.5rem; font-size: 1rem;"><i class="fas fa-file-download" style="color: var(--accent-color);"></i> Download CV</a>
-                </div>
+                <a href="#projects" class="cta-btn">View Applications <i class="fas fa-arrow-down"></i></a>
             </div>
         </div>
     </section>
@@ -747,7 +747,7 @@
         <div class="about-content">
             <div class="about-tabs">
                 <button class="tab-btn active" onclick="switchAboutTab(event, 'vision-tab')">
-                    <i class="fas fa-server"></i> Profile Vision
+                    <i class="fas fa-user-graduate"></i> Profile Vision
                 </button>
                 <button class="tab-btn" onclick="switchAboutTab(event, 'experience-tab')">
                     <i class="fas fa-briefcase"></i> Experience
@@ -760,26 +760,26 @@
             <div class="about-display-pane">
                 <div class="pane-text-wrapper">
                     <div id="vision-tab" class="tab-text-content active-pane">
-                        <p>I am an <strong>ICT Professional and Cisco Networking Academy alumnus</strong> specializing in network administration, infrastructure resilience, and enterprise systems support[cite: 38].</p>
-                        <p>My objective focuses on managing secure connectivity, optimizing complex routing & switching structures, and deploying high-availability cloud architecture to ensure zero-downtime enterprise operations[cite: 38].</p>
+                        <p>I am an <strong>Information and Communication Technology professional</strong> dedicated to structural enterprise integrations, cybersecurity frameworks, and automated application processes.</p>
+                        <p>I focus heavily on comprehensive process-driven system maps, aiming to optimize how critical backend data sets pass safely across cross-functional platforms.</p>
                     </div>
 
                     <div id="experience-tab" class="tab-text-content">
-                        <p>Currently serving as a <strong>Network System Support Specialist at Mr Price Group Head Office</strong>, where I administer network boundaries, manage Access Control Systems (ACS), and diagnose routing, switching, and transport-layer faults under tight operational deadlines[cite: 38].</p>
+                        <p>Currently adding value within <strong>Systems Support operations at Mr Price Group</strong>, checking technical components, supporting framework integrations, and verifying infrastructure stability paths.</p>
                     </div>
 
                     <div id="safereg-tab" class="tab-text-content">
-                        <p>Designed and built <strong>SafeReg AI</strong>, an advanced registry protection gateway engineered to isolate structural registration logic flaws and safely evaluate network variables to protect systems against abuse patterns.</p>
+                        <p>Designed and built <strong>SafeReg AI</strong>, an advanced registration protective system designed to isolate and resolve registration logic flaws, filtering security variables intelligently to avoid system abuse patterns.</p>
                     </div>
                 </div>
 
                 <div>
-                    <h3 style="font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.5rem;">Core Competencies</h3>
+                    <h3 style="font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.5rem;">Core Fields</h3>
                     <div class="skills-grid">
-                        <div class="skill-tag">Routing & Switching (LAN/WAN)[cite: 38]</div>
-                        <div class="skill-tag">Cloud Infrastructure Engineering</div>
-                        <div class="skill-tag">Network Security & Access Control (ACS)[cite: 38]</div>
-                        <div class="skill-tag">VMware virtualization & Active Directory[cite: 38]</div>
+                        <div class="skill-tag">Systems Integration</div>
+                        <div class="skill-tag">Data Architecture</div>
+                        <div class="skill-tag">Automated Testing</div>
+                        <div class="skill-tag">Security Frameworks</div>
                     </div>
                 </div>
             </div>
@@ -793,16 +793,16 @@
                 
                 <div class="edu-node">
                     <div class="edu-period">2026 — 2027 (Current)</div>
-                    <div class="edu-degree">Bachelor of ICT (Honors)[cite: 38]</div>
-                    <div class="edu-institute">Durban University of Technology[cite: 38]</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.4rem; line-height: 1.5;">Advanced technical specialization leveraging advanced architectural concepts within enterprise infrastructure frameworks and predictive network topologies[cite: 38].</p>
+                    <div class="edu-degree">Bachelor of ICT (Honors)</div>
+                    <div class="edu-institute">Durban University of Technology</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.4rem; line-height: 1.5;">Advanced strategic specialization targeting smart technology infrastructure orchestration, complex algorithmic parsing systems, and logical predictive architectures.</p>
                 </div>
 
                 <div class="edu-node">
                     <div class="edu-period">2022 — 2024</div>
-                    <div class="edu-degree">Bachelor of Information Communication Technology</div>
-                    <div class="edu-institute">Durban University of Technology[cite: 38]</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.4rem; line-height: 1.5;">Graduated with core systemic mastery covering enterprise data communications, object modeling, and network platform engineering (NQF Level 7, 70.1% Average)[cite: 38].</p>
+                    <div class="edu-degree">Bachelor of Information and Communication Technology</div>
+                    <div class="edu-institute">Durban University of Technology</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.4rem; line-height: 1.5;">Graduated with core systemic mastery covering enterprise system communication, object modeling, data logic manipulation structures, and network platform engineering.</p>
                 </div>
 
             </div>
@@ -871,45 +871,12 @@
     </section>
 
     <section id="projects" class="reveal-section">
-        <h2 class="section-title">Technical Deployments & Infrastructure</h2>
+        <h2 class="section-title">Live Apps</h2>
         <div class="projects-grid" id="projects-container">
-            
-            <!-- Restored: Full-Stack Subscription Tracker API Module -->
-            <div class="project-card">
-                <div class="project-top">
-                    <div class="project-icon"><i class="fas fa-layer-group"></i></div>
-                    <h3>Subscription Tracking System</h3>
-                    <p>A production backend architecture engineered for real-time account tracking. Features an event-driven framework driven by custom webhook ingestion pipelines, strict JWT-based endpoint authentication, and clean Mongoose relational abstractions.</p>
-                </div>
-                <div>
-                    <div class="skills-grid" style="margin-bottom: 1rem;">
-                        <span class="skill-tag" style="font-size: 0.8rem;">Node.js & Express</span>
-                        <span class="skill-tag" style="font-size: 0.8rem;">MongoDB & Mongoose</span>
-                        <span class="skill-tag" style="font-size: 0.8rem;">Event Webhooks</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Windows Server Home Lab Project Section -->
-            <div class="project-card">
-                <div class="project-top">
-                    <div class="project-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3>Windows Server 2022 Home Lab</h3>
-                    <p>Built a comprehensive VMware-based virtualized environment for domain controller provisioning[cite: 38]. Configured Active Directory Domain Services (AD DS), engineered custom Group Policy Objects (GPOs), and deployed strict access control matrices[cite: 38].</p>
-                </div>
-                <div>
-                    <div class="skills-grid" style="margin-bottom: 1rem;">
-                        <span class="skill-tag" style="font-size: 0.8rem;">VMware ESXi / Workstation[cite: 38]</span>
-                        <span class="skill-tag" style="font-size: 0.8rem;">Active Directory Identity[cite: 38]</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SafeReg AI Gateway -->
             <div class="project-card">
                 <div class="project-top">
                     <div class="project-icon"><i class="fas fa-robot"></i></div>
-                    <h3>SafeReg AI Gateway</h3>
+                    <h3>SafeReg AI</h3>
                     <p>An optimized operational web gateway engineered to validate ecosystem forms and evaluate profile registry operations systematically using structured logic algorithms.</p>
                 </div>
                 <div>
@@ -922,60 +889,57 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section id="contact" class="reveal-section">
         <div class="contact-container">
             <h2 class="section-title" style="display: inline-block;">Get In Touch</h2>
-            <p style="color: var(--text-muted); margin: 1.5rem 0;">I am always open to exploring enterprise routing frameworks, cloud migrations, or network infrastructure orchestration tracks.</p>
+            <p style="color: var(--text-muted); margin: 1.5rem 0;">I am always open to exploring integration solutions, analytical pipelines, or infrastructure configuration tracks.</p>
             
             <div class="contact-methods">
-                <a href="tel:+27794467144" class="contact-link-btn">
-                    <i class="fas fa-phone-alt" style="color: var(--accent-color);"></i> +27 79 446 7144[cite: 38]
+                <a href="tel:0794467144" class="contact-link-btn">
+                    <i class="fas fa-phone-alt" style="color: var(--accent-color);"></i> 079 446 7144
                 </a>
                 
-                <a href="mailto:londekablessing5@gmail.com" class="cta-btn">Initiate Technical Discussion <i class="fas fa-envelope"></i></a>
-                
-                <!-- Explicit Download CV Action Module -->
-                <a href="LONDEKA BLESSING NGWENYA (IT ADMIN)_2.pdf" target="_blank" class="contact-link-btn" style="border-radius: 5px; background: rgba(56, 189, 248, 0.05); border-color: var(--accent-color);"><i class="fas fa-download" style="color: var(--accent-color);"></i> Download Curriculum Vitae (PDF)</a>
+                <a href="mailto:your.email@example.com" class="cta-btn">Initiate Discussion <i class="fas fa-envelope"></i></a>
             </div>
 
             <div class="social-links">
                 <a href="https://github.com/LeRazo1" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/londeka-ngwenya-393a1b2a8/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/le__razo" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://youtube.com/@dopamine711" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </section>
 
-    <div id="document-modal" class="modal-overlay" onclick="closeDocumentModal()">
-        <div class="modal-container" onclick="event.stopPropagation()">
+    <div id="document-preview-modal" class="modal-overlay" onclick="if(event.target.id==='document-preview-modal') closeDocumentModal();">
+        <div class="modal-container">
             <div class="modal-header">
-                <h3 id="modal-title" style="color: var(--text-color);">Document Preview</h3>
-                <button class="close-modal-btn" onclick="closeDocumentModal()"><i class="fas fa-times"></i></button>
+                <h3 id="modal-document-title">Credential Asset Preview</h3>
+                <button class="close-modal-btn" onclick="closeDocumentModal()">&times;</button>
             </div>
             <div class="modal-body">
-                <iframe id="modal-iframe" class="modal-iframe" src=""></iframe>
-                <div id="modal-fallback" class="modal-fallback" style="display: none;">
+                <iframe id="modal-iframe-viewer" class="modal-iframe" src=""></iframe>
+                <div id="modal-fallback-ui" class="modal-fallback" style="display: none;">
                     <i class="fas fa-file-pdf"></i>
-                    <p style="color: var(--text-color); margin-bottom: 1rem;">Direct web preview generation dropped via container. Use the action module directly.</p>
-                    <a id="modal-download-link" href="#" target="_blank" class="cta-btn"><i class="fas fa-external-link-alt"></i> Open Document Directly</a>
+                    <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Document Asset Stream</h4>
+                    <a id="modal-fallback-download-link" href="#" target="_blank" class="cta-btn" style="font-size: 0.9rem; padding: 0.6rem 1.5rem;">Open Document Asset <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Londeka Blessing Ngwenya. Network & Cloud Systems Architecture.</p>
+        <p>&copy; 2026 LONDEKA BLESSING NGWENYA . All rights reserved.</p>
     </footer>
 
     <script>
+        // High-Performance Dynamic Matrix Canvas Network Animation Engine
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-
+        
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -987,122 +951,167 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = Math.random() * 0.4 - 0.2;
-                this.speedY = Math.random() * 0.4 - 0.2;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.radius = Math.random() * 2 + 1;
             }
             update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x > canvas.width) this.x = 0;
-                else if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                else if (this.y < 0) this.y = canvas.height;
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
             draw() {
-                ctx.fillStyle = 'rgba(56, 189, 248, 0.3)';
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.25)';
                 ctx.fill();
             }
         }
 
         function initParticles() {
             particles = [];
-            const count = Math.min(Math.floor(window.innerWidth / 15), 90);
-            for(let i=0; i<count; i++) {
-                particles.push(new Particle());
-            }
+            const count = Math.min(Math.floor(window.innerWidth / 15), 75);
+            for(let i=0; i<count; i++) particles.push(new Particle());
         }
         initParticles();
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            for(let i=0; i<particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                for(let j=i+1; j<particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if(dist < 110) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${0.12 * (1 - dist/110)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
             requestAnimationFrame(animateParticles);
         }
         animateParticles();
 
-        const strings = ["Network Administrator", "Network Systems Engineer", "Cloud Infrastructure Engineer"];
-        let stringIdx = 0;
-        let charIdx = 0;
-        let isDeleting = false;
-        const typingTarget = document.getElementById('typing-text');
-
-        function runTypewriter() {
-            const currentString = strings[stringIdx];
-            if (!isDeleting) {
-                typingTarget.textContent = currentString.substring(0, charIdx + 1);
-                charIdx++;
-                if (charIdx === currentString.length) {
-                    isDeleting = true;
-                    setTimeout(runTypewriter, 2000);
-                    return;
-                }
-            } else {
-                typingTarget.textContent = currentString.substring(0, charIdx - 1);
-                charIdx--;
-                if (charIdx === 0) {
-                    isDeleting = false;
-                    stringIdx = (stringIdx + 1) % strings.length;
-                }
-            }
-            setTimeout(runTypewriter, isDeleting ? 40 : 80);
-        }
-        if(typingTarget) runTypewriter();
-
-        function switchAboutTab(event, tabId) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-text-content').forEach(pane => pane.classList.remove('active-pane'));
-            
-            event.currentTarget.classList.add('active');
-            document.getElementById(tabId).classList.add('active-pane');
-        }
-
-        const modal = document.getElementById('document-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalIframe = document.getElementById('modal-iframe');
-        const modalFallback = document.getElementById('modal-fallback');
-        const modalDownloadLink = document.getElementById('modal-download-link');
-
-        function launchDocumentModal(title, filepath) {
-            modalTitle.textContent = title;
-            modalIframe.src = filepath;
-            modalDownloadLink.href = filepath;
-            
-            modalIframe.onerror = function() {
-                modalIframe.style.display = 'none';
-                modalFallback.style.display = 'flex';
-            };
-            
-            modalIframe.style.display = 'block';
-            modalFallback.style.display = 'none';
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeDocumentModal() {
-            modal.classList.remove('active');
-            modalIframe.src = '';
-            document.body.style.overflow = '';
-        }
-
-        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        // Section Dynamic Reveal Script Engine
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if(entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.08 });
 
         document.querySelectorAll('.reveal-section').forEach(section => {
             revealObserver.observe(section);
         });
+
+        // Interactive Credentials Windows
+        function launchDocumentModal(friendlyName, relativeFilePath) {
+            document.getElementById('modal-document-title').textContent = friendlyName;
+            const iframe = document.getElementById('modal-iframe-viewer');
+            const fallback = document.getElementById('modal-fallback-ui');
+            const link = document.getElementById('modal-fallback-download-link');
+            
+            iframe.src = relativeFilePath;
+            link.href = relativeFilePath;
+            document.getElementById('document-preview-modal').classList.add('active');
+
+            setTimeout(() => {
+                try {
+                    if (!iframe.contentWindow || iframe.contentWindow.location.href === "about:blank") {
+                        fallback.style.display = 'flex';
+                    }
+                } catch (e) { fallback.style.display = 'flex'; }
+            }, 750);
+        }
+
+        function closeDocumentModal() {
+            document.getElementById('document-preview-modal').classList.remove('active');
+            document.getElementById('modal-iframe-viewer').src = "";
+            document.getElementById('modal-fallback-ui').style.display = 'none';
+        }
+
+        // About Tab Switches
+        function switchAboutTab(event, tabId) {
+            document.querySelectorAll('.tab-text-content').forEach(p => p.classList.remove('active-pane'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active-pane');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Running Text Engine
+        const entries = ["Built SafeReg AI.", "Process-Driven Problem Solver.", "Architecting Solutions."];
+        let idx = 0;
+        function runTyping() {
+            let letters = entries[idx].split("");
+            const loop = () => {
+                if(letters.length > 0) {
+                    document.getElementById('typing-text').innerHTML += letters.shift();
+                    setTimeout(loop, 90);
+                } else {
+                    setTimeout(erase, 1800);
+                }
+            };
+            loop();
+        }
+        function erase() {
+            let text = entries[idx];
+            const loop = () => {
+                if(text.length > 0) {
+                    text = text.slice(0, -1);
+                    document.getElementById('typing-text').innerHTML = text;
+                    setTimeout(loop, 45);
+                } else {
+                    idx = (idx + 1) % entries.length;
+                    setTimeout(runTyping, 400);
+                }
+            };
+            loop();
+        }
+        runTyping();
+
+        // GitHub Repository Pipeline Scanner
+        async function loadAdditionalRepos() {
+            try {
+                const response = await fetch('https://api.github.com/users/LeRazo1/repos?sort=updated');
+                if(response.ok) {
+                    const repos = await response.json();
+                    const container = document.getElementById('projects-container');
+                    repos.forEach(repo => {
+                        if (repo.name.toUpperCase().includes('PORTFOLIO') || repo.name.toUpperCase().includes('SAFEREG')) return;
+                        const liveUrl = repo.homepage ? repo.homepage : `https://${repo.name.toLowerCase()}.vercel.app`;
+                        
+                        const card = document.createElement('div');
+                        card.className = 'project-card';
+                        card.innerHTML = `
+                            <div class="project-top">
+                                <div class="project-icon"><i class="fas fa-layer-group"></i></div>
+                                <h3 style="text-transform: capitalize;">${repo.name.replace(/[-_]/g, ' ')}</h3>
+                                <p>${repo.description || 'Production build repository deployed to your structural cloud environment profile.'}</p>
+                            </div>
+                            <div>
+                                <div class="skills-grid" style="margin-bottom: 1rem;">
+                                    <span class="skill-tag" style="font-size: 0.8rem;">${repo.language || 'Production Component'}</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="${liveUrl}" target="_blank" class="project-btn btn-primary"><i class="fas fa-external-link-alt"></i> Open Application</a>
+                                    <a href="${repo.html_url}" target="_blank" class="project-btn btn-secondary"><i class="fab fa-github"></i> View Source</a>
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                }
+            } catch(e) { console.log("Pipeline read execution bypassed."); }
+        }
+        window.addEventListener('DOMContentLoaded', loadAdditionalRepos);
     </script>
 </body>
 </html>
