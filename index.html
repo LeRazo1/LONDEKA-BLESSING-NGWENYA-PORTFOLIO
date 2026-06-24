@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Londeka Blessing Ngwenya | Portfolio</title>
-    <!-- Google Fonts & FontAwesome for icons -->
+    <title>Londeka Ngwenya | Digital Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -51,7 +50,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(90px);
-            opacity: 0.35;
+            opacity: 0.4;
             mix-blend-mode: screen;
             animation: floatAround 25s infinite alternate ease-in-out;
         }
@@ -75,6 +74,16 @@
             animation-delay: -5s;
         }
 
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #9333ea) 0%, transparent 70%);
+            top: 40%;
+            left: 50%;
+            animation-duration: 25s;
+            animation-delay: -10s;
+        }
+
         @keyframes floatAround {
             0% { transform: translate(0, 0) scale(1); }
             50% { transform: translate(80px, 60px) scale(1.1); }
@@ -93,7 +102,6 @@
 
         .glass-card:hover {
             border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
         }
 
         /* --- NAVIGATION --- */
@@ -129,7 +137,6 @@
             display: flex;
             list-style: none;
             gap: 2rem;
-            align-items: center;
         }
 
         .nav-links a {
@@ -180,14 +187,8 @@
         .hero p {
             font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 650px;
+            max-width: 600px;
             margin-bottom: 2.5rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
         }
 
         .cta-btn {
@@ -199,9 +200,6 @@
             font-weight: 500;
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .cta-btn:hover {
@@ -209,24 +207,11 @@
             box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
         }
 
-        .secondary-btn {
-            background: transparent;
-            border: 1px solid var(--card-border);
-            color: #fff;
-            box-shadow: none;
-        }
-
-        .secondary-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--text-muted);
-            box-shadow: none;
-        }
-
         /* --- MAIN SECTION LAYOUT --- */
         section {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .section-title {
@@ -287,54 +272,7 @@
             color: var(--secondary-accent);
         }
 
-        /* --- PROJECTS SECTION --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--card-border);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            color: var(--text-main);
-        }
-
-        /* --- SKILLS FRAMEWORK --- */
+        /* --- SKILLS GRID --- */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -361,7 +299,55 @@
             font-size: 0.95rem;
         }
 
-        /* --- CONTACT SECTION --- */
+        /* --- CERTIFICATIONS --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cert-meta {
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-badge {
+            font-size: 0.75rem;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            color: #22d3ee;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .cert-issuer {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: auto;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1rem;
+        }
+
+        /* --- CONTACT (LET'S CONNECT) --- */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -382,15 +368,14 @@
         .contact-method-list {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.5rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 1.5rem;
-            padding: 1.2rem;
-            text-decoration: none;
+            padding: 1.5rem;
         }
 
         .contact-icon {
@@ -415,7 +400,7 @@
         }
 
         .contact-details p {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #fff;
             margin: 0;
         }
@@ -436,6 +421,7 @@
         .form-group label {
             font-size: 0.85rem;
             color: var(--text-muted);
+            font-weight: 500;
         }
 
         .form-group input, .form-group textarea {
@@ -445,6 +431,7 @@
             padding: 0.8rem;
             color: #fff;
             font-family: inherit;
+            transition: border-color 0.3s ease;
         }
 
         .form-group input:focus, .form-group textarea:focus {
@@ -460,6 +447,11 @@
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
         }
 
         footer {
@@ -471,6 +463,7 @@
             margin-top: 4rem;
         }
 
+        /* --- RESPONSIVE STYLES --- */
         @media (max-width: 768px) {
             .about-content, .contact-container {
                 grid-template-columns: 1fr;
@@ -480,13 +473,7 @@
                 font-size: 2.5rem;
             }
             .nav-links {
-                display: none;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                max-width: 300px;
+                display: none; /* Can be paired with a mobile menu link */
             }
         }
     </style>
@@ -496,159 +483,156 @@
     <div class="bg-animation-container">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
-    <!-- Navigation Header -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Londeka Blessing Ngwenya</div>
+            <div class="logo">Londeka Ngwenya</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Capabilities</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="Londeka_Blessing_Ngwenya_CV.pdf" target="_blank" style="color: var(--secondary-accent); font-weight: 600;">View CV</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Identity Target -->
     <header class="hero">
-        <div class="hero-badge">Systems & Network Infrastructure</div>
-        <h1>Londeka Blessing Ngwenya</h1>
-        <p>Detail-driven ICT Professional and Cisco Networking Academy alumnus specializing in network administration, enterprise environment resilience, and secure infrastructure operations.</p>
-        
-        <div class="hero-buttons">
-            <a href="#contact" class="cta-btn"><i class="fa-solid fa-envelope"></i> Let's Connect</a>
-            <a href="Londeka_Blessing_Ngwenya_CV.pdf" target="_blank" class="cta-btn secondary-btn"><i class="fa-solid fa-file-pdf"></i> Download Document CV</a>
-        </div>
+        <div class="hero-badge">ICT Professional Portfolio</div>
+        <h1>Londeka Ngwenya</h1>
+        <p>ICT Graduate specializing in process optimization, data visualization, and enterprise-scale business logic integration.</p>
+        <a href="#contact" class="cta-btn">Let's Connect</a>
     </header>
 
-    <!-- About Pipeline Narrative -->
     <section id="about">
-        <h2 class="section-title">About Narrative</h2>
+        <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>I am an infrastructure-focused ICT Honors candidate from the Durban University of Technology with a clear specialization in network administration, security boundary design, and high-availability enterprise environments.</p>
-                <p>My technical ethos bridges the critical gap between core physical network architecture and complex backend enterprise operations. I look past basic hardware setups to build scalable, secure connectivity paths that defend data integrity and eliminate operational friction.</p>
+                <p>As an Information and Communication Technology graduate from the Durban University of Technology (DUT), I am deeply passionate about understanding the grand architecture of systems and enterprise integration.</p>
+                <p>Rather than looking at isolated coding tools or separate applications, I specialize in analyzing end-to-end data pipelines and evaluating how strategic core business modules interact fluidly to keep operations scaling efficiently.</p>
             </div>
             <div class="glass-card highlight-box">
-                <h3>Academic & Professional Baseline</h3>
+                <h3>Core Focus Areas</h3>
                 <ul class="highlight-list">
-                    <li><i class="fa-solid fa-graduation-cap"></i> Bachelor of ICT — 70.1% Academic Average</li>
-                    <li><i class="fa-solid fa-microchip"></i> Cisco Networking Academy Trained</li>
-                    <li><i class="fa-solid fa-server"></i> Enterprise Systems & Directory Architect</li>
-                    <li><i class="fa-solid fa-database"></i> T-SQL & Structural Schema Integrity</li>
+                    <li><i class="fa-solid fa-circle-check"></i> System & Business Flow Integration</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Structured Process Frameworks</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Advanced Analytical Decision Logic</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Enterprise Resource Planning Design</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Technical Projects Proof Section -->
-    <section id="projects" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
-        <h2 class="section-title">Technical Infrastructure Projects</h2>
-        <div class="projects-grid">
-            <div class="glass-card project-card">
-                <div>
-                    <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <h3>Windows Server 2022 Home Lab Setup</h3>
-                    <p>Designed and deployed a virtualized enterprise domain ecosystem utilizing a VMware-based architecture. Engineered secure system access management by provisioning Active Directory domain controllers, defining precise Group Policy Objects (GPOs), and implementing centralized password policy frameworks.</p>
-                </div>
-                <div class="project-tags">
-                    <span class="tag">VMware</span>
-                    <span class="tag">Active Directory</span>
-                    <span class="tag">Group Policy (GPO)</span>
-                    <span class="tag">Windows Server</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Capabilities Grid -->
     <section id="skills">
-        <h2 class="section-title">Core Administration Capabilities</h2>
+        <h2 class="section-title">Professional Capabilities</h2>
         <div class="skills-grid">
             <div class="glass-card skill-card">
-                <i class="fa-solid fa-sliders"></i>
-                <h3>Infrastructure & Access Control</h3>
-                <p>Configuring layer-2/layer-3 switches and routers via Command Line Interface (CLI). Administering Access Control Systems (ACS) to secure organizational network parameters.</p>
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Process & Architecture Thinking</h3>
+                <p>Exceptional problem-solving approach centered on logical workflow processes rather than narrow tools. Designing systemic data dependencies accurately.</p>
             </div>
             <div class="glass-card skill-card">
-                <i class="fa-solid fa-database"></i>
-                <h3>Database & Integrity Control</h3>
-                <p>Writing highly optimized T-SQL scripts and administering structural datasets like SA-SAMS, ensuring accurate transactional data ingestion across complex endpoints.</p>
+                <i class="fa-solid fa-chart-pie"></i>
+                <h3>Data Analysis & Visualization</h3>
+                <p>Transforming multi-source unstructured numbers into clean, narrative dashboards that clarify trends and accelerate operational choices.</p>
             </div>
             <div class="glass-card skill-card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>Systems Reliability & Support</h3>
-                <p>Isolating network transport faults under high-pressure retail and administrative settings, reducing enterprise platform downtime through clean analytical tracing steps.</p>
+                <i class="fa-solid fa-robot"></i>
+                <h3>Enterprise AI Strategy</h3>
+                <p>Equipped with micro-credentials across safe runtime parameters, assistive productivity tools, and modern prompt engineering governance models.</p>
             </div>
         </div>
     </section>
 
-    <!-- Let's Connect Footprint -->
+    <section id="certifications">
+        <h2 class="section-title">Certifications & Training</h2>
+        <div class="cert-grid">
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Intensive Program</span>
+                    <h3>Data Analysis and Visualization</h3>
+                    <p class="cert-issuer">Chongqing Dianjiang Vocational Education Center & Wise Insight</p>
+                </div>
+                <div class="cert-date">April 2026</div>
+            </div>
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Microsoft AI Series</span>
+                    <h3>Generative AI & Fundamentals</h3>
+                    <p class="cert-issuer">Durban University of Technology (DUT)</p>
+                </div>
+                <div class="cert-date">July 2025</div>
+            </div>
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Microsoft AI Series</span>
+                    <h3>Responsible AI & Copilot Ecosystems</h3>
+                    <p class="cert-issuer">Durban University of Technology (DUT)</p>
+                </div>
+                <div class="cert-date">July 2025</div>
+            </div>
+            <div class="glass-card cert-card">
+                <div class="cert-meta">
+                    <span class="cert-badge">Social Initiative</span>
+                    <h3>Reading Champion - Phase 5</h3>
+                    <p class="cert-issuer">Department of Basic Education (Presidential Employment Stimulus)</p>
+                </div>
+                <div class="cert-date">November 2025</div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
-        <h2 class="section-title">Secure a Connection</h2>
+        <h2 class="section-title">Let's Connect</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Contact Footprint</h3>
-                <p>I am actively targeting Network Administrator and Infrastructure Support roles across KwaZulu-Natal and Johannesburg regions. Reach out to set up an operational interview panels or technical review.</p>
+                <h3>Get In Touch</h3>
+                <p>I am looking to collaborate on major business transformation pipelines, ecosystem analytics consulting, or system analyst operations. Reach out to coordinate an interview or professional discussion.</p>
                 
                 <div class="contact-method-list">
                     <div class="glass-card contact-item">
-                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
                         <div class="contact-details">
-                            <h4>Direct Phone</h4>
-                            <p>+27 79 446 7144</p>
+                            <h4>Phone</h4>
+                            <p>079 446 7144</p>
                         </div>
                     </div>
                     
-                    <a href="mailto:londekablessing5@gmail.com" class="glass-card contact-item">
-                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="contact-details">
-                            <h4>Secure Mail</h4>
-                            <p>londekablessing5@gmail.com</p>
+                    <div class="glass-card contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
                         </div>
-                    </a>
-
-                    <a href="https://github.com/LeRazo1" target="_blank" class="glass-card contact-item">
-                        <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
                         <div class="contact-details">
-                            <h4>Code Repositories</h4>
-                            <p>github.com/LeRazo1</p>
+                            <h4>Email</h4>
+                            <p>your.email@example.com</p>
                         </div>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/londeka-ngwenya-393a1b2a8/" target="_blank" class="glass-card contact-item">
-                        <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
-                        <div class="contact-details">
-                            <h4>Professional Network</h4>
-                            <p>linkedin.com/in/londeka-ngwenya</p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
 
-            <form class="glass-card contact-form" onsubmit="event.preventDefault(); alert('Message successfully logged across terminal pipeline.');">
+            <form class="glass-card contact-form" onsubmit="event.preventDefault(); alert('Message simulation sent successfully.');">
                 <div class="form-group">
-                    <label for="name">Identifier (Name)</label>
-                    <input type="text" id="name" required placeholder="Enterprise Recruiter">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
                 </div>
                 <div class="form-group">
-                    <label for="email">Return Route (Email)</label>
-                    <input type="email" id="email" required placeholder="recruiter@enterprise.com">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
                 </div>
                 <div class="form-group">
-                    <label for="message">Transmission Text</label>
-                    <textarea id="message" rows="5" required placeholder="Specify your requirements or open interview availability..."></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required placeholder="Let's build a path ahead..."></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Transmit Message</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Londeka Blessing Ngwenya. Structured for high-availability enterprise deployment.
+        &copy; 2026 Londeka Ngwenya. All Rights Reserved. Built securely using modular front-end code.
     </footer>
 
 </body>
